@@ -1,25 +1,26 @@
-import logo from './logo.svg';
-import './App.css';
+import React from 'react'
+import classes from './App.module.css'
+import {connect} from 'react-redux'
+import Form from './components/form/Form'
+import Trackers from './components/trackers/Trackers'
 
-function App() {
+function App({hours, minutes, seconds}) {
+  console.log(hours, minutes, seconds)
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div className={classes.App}>
+      <h1>tracker</h1>
+      <Form />
+      <Trackers h={hours} m={minutes} s={seconds} />
     </div>
-  );
+  )
 }
 
-export default App;
+const mapStateToProps = state => {
+  return {
+    hours: state.time.h,
+    minutes: state.time.m,
+    seconds: state.time.s,
+  }
+}
+
+export default connect(mapStateToProps)(App)

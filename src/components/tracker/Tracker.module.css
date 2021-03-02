@@ -1,0 +1,42 @@
+.Tracker {
+  display: flex;
+  justify-content: space-between;
+  padding: 15px 10px;
+  background: transparent;
+  border-bottom: 2px solid var(--light-grey);
+}
+.Tracker .name {
+  flex: 1 1;
+  text-align: left;
+}
+.Tracker .timerBlock {
+  flex: 1 1;
+  display: flex;
+  justify-content: space-between;
+}
+.Tracker .timer {
+  flex: 2;
+  letter-spacing: 0;
+}
+.Tracker button {
+  border: none;
+  outline: none;
+  padding: 0;
+  background: transparent;
+  color: white;
+  cursor: pointer;
+}
+.Tracker .play {
+  color: var(--light-grey);
+  transition: color 0.3s;
+}
+.Tracker .play:hover {
+  color: var(--grey);
+}
+.Tracker .remove {
+  color: var(--red);
+  transition: color 0.3s;
+}
+.Tracker .remove:hover {
+  color: var(--purple);
+}

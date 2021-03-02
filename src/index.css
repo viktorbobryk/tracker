@@ -1,3 +1,13 @@
+html {
+  --dark: #000000;
+  --grey: #333333;
+  --light-grey: #a5a5a5;
+  --green: #3faf6c;
+  --light-green: #62b885;
+  --red: #d2697a;
+  --purple: #a526e0;
+  --bgc: #fdfdf6;
+}
 body {
   margin: 0;
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
