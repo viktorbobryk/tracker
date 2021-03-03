@@ -1,19 +1,19 @@
-import React from 'react'
-import classes from './Form.module.css'
-import {useState} from 'react'
-import {v4 as uuidv4} from 'uuid'
+import React from 'react';
+import classes from './Form.module.css';
+import {useState} from 'react';
+import {v4 as uuidv4} from 'uuid';
 
 const Form = props => {
-  const [inputValue, setInputValue] = useState('')
+  const [inputValue, setInputValue] = useState('');
 
   const inputHandler = e => {
-    e.preventDefault()
-    setInputValue(e.target.value)
-  }
+    e.preventDefault();
+    setInputValue(e.target.value);
+  };
 
   const clearInput = () => {
-    setInputValue('')
-  }
+    setInputValue('');
+  };
 
   return (
     <>
@@ -27,32 +27,17 @@ const Form = props => {
           onClick={() => {
             props.add(
               inputValue ? inputValue : new Date().toLocaleString(),
-              '00:00:00',
+              {s: 0, m: 0, h: 0},
               uuidv4()
-            )
-            clearInput()
+            );
+            clearInput();
           }}
         >
           <span className="material-icons">play_circle_filled</span>
         </button>
-        {/*  <span className="material-icons">*/}
-        {/*    play_circle_filled*/}
-        {/*  </span>*/}
-        {/*  <span className="material-icons">*/}
-        {/*    pause_circle*/}
-        {/*  </span>*/}
-        {/*<span className="material-icons">*/}
-        {/*    play_circle_outline*/}
-        {/*</span>*/}
-        {/*  <span className="material-icons">*/}
-        {/*    pause_circle_outline*/}
-        {/*  </span>*/}
-        {/*<span className="material-icons">*/}
-        {/*  remove_circle_outline*/}
-        {/*</span>*/}
       </form>
     </>
-  )
-}
+  );
+};
 
-export default Form
+export default Form;

@@ -1,7 +1,7 @@
-import * as actionTypes from '../actionTypes/actionTypes'
+import * as actionTypes from '../actionTypes/actionTypes';
 const initialState = {
-  list: [],
-}
+  list: JSON.parse(localStorage.getItem('trackers')),
+};
 
 export const trackersReducer = (state = initialState, action) => {
   switch (action.type) {
@@ -16,16 +16,16 @@ export const trackersReducer = (state = initialState, action) => {
             time: action.payload.time,
           },
         ],
-      }
+      };
     case actionTypes.REMOVE_TRACKER:
       let newList = [...state.list].filter(
         item => item.id !== action.payload.id
-      )
+      );
       return {
         ...state,
         list: newList,
-      }
+      };
     default:
-      return state
+      return state;
   }
-}
+};

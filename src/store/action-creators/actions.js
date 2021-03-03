@@ -1,4 +1,4 @@
-import {ADD_NEW_TRACKER, REMOVE_TRACKER} from '../actionTypes/actionTypes'
+import {ADD_NEW_TRACKER, REMOVE_TRACKER} from '../actionTypes/actionTypes';
 export const addNewTracker = (name, time, id) => {
   return {
     type: ADD_NEW_TRACKER,
@@ -7,8 +7,8 @@ export const addNewTracker = (name, time, id) => {
       time: time,
       id: id,
     },
-  }
-}
+  };
+};
 
 export const removeTracker = id => {
   return {
@@ -16,5 +16,5 @@ export const removeTracker = id => {
     payload: {
       id: id,
     },
-  }
-}
+  };
+};
