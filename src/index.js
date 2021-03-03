@@ -1,8 +1,10 @@
 import React from 'react'
 import ReactDOM from 'react-dom'
 import {Provider} from 'react-redux'
-import {createStore, compose} from 'redux'
+import {createStore, applyMiddleware, compose} from 'redux'
 import {reducer} from './store/reducers/index'
+import thunk from 'redux-thunk'
+
 import './index.css'
 import App from './App'
 import reportWebVitals from './reportWebVitals'
@@ -12,7 +14,7 @@ const composeEnhancers =
     ? window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__
     : null || compose
 
-const store = createStore(reducer, composeEnhancers())
+const store = createStore(reducer, composeEnhancers(applyMiddleware(thunk)))
 
 const app = (
   <Provider store={store}>

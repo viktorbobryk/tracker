@@ -1,6 +1,6 @@
 import {combineReducers} from 'redux'
-import {timeReducer} from './time'
+import {trackersReducer} from './treckers'
 
 export const reducer = combineReducers({
-  time: timeReducer,
+  trackers: trackersReducer,
 })
