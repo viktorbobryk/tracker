@@ -47,13 +47,16 @@ const Tracker = props => {
   };
 
   let driveTimer;
+  let color = {};
 
   if (ticking) {
     driveTimer = (
       <button className={classes.play} onClick={stopTimer}>
-        <span className="material-icons">pause_circle_outline</span>
+        <span className="material-icons green">pause_circle_outline</span>
       </button>
     );
+
+    color = {color: 'green'};
   } else {
     driveTimer = (
       <button className={classes.play} onClick={startTimer}>
@@ -63,7 +66,7 @@ const Tracker = props => {
   }
 
   return (
-    <div className={classes.Tracker}>
+    <div className={classes.Tracker} style={color}>
       <div className={classes.name}>{props.name}</div>
       <div className={classes.timerBlock}>
         <span className={classes.timer}>

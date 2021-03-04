@@ -40,3 +40,6 @@
 .Tracker .remove:hover {
   color: var(--purple);
 }
+.tracker .green {
+  color: var(--green);
+}

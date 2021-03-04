@@ -6,8 +6,6 @@ import Trackers from './components/trackers/Trackers';
 import {addNewTracker, removeTracker} from './store/action-creators/actions';
 
 function App({add, remove, trackers}) {
-  const newTrackers = trackers;
-
   const updateTime = time => {
     [...trackers].forEach(item => {
       if (item.id === time.id) {
@@ -16,12 +14,17 @@ function App({add, remove, trackers}) {
     });
   };
   const save = () => {
-    localStorage.setItem('trackers', JSON.stringify(newTrackers));
+    localStorage.setItem('trackers', JSON.stringify([...trackers]));
   };
 
   useEffect(() => {
-    return () => {
+    window.onbeforeunload = function() {
       save();
+      return true;
+    };
+
+    return () => {
+      window.onbeforeunload = null;
     };
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [trackers]);
